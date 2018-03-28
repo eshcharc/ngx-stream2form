@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "license": "MIT",
   "description": "Set a property of an object with an Angular form based on the structore of the event's payload of an RxJS stream",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eshcharc/ngx-stream2form.git"
+  },
   "$schema": "./node_modules/ng-packagr/package.schema.json",
   "main": "index.js",
   "scripts": {
