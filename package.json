@@ -20,6 +20,13 @@
     },
     "dest": "./dist"
   },
+  "dependencies": {
+    "rxjs": "^5.5.6",
+    "@angular/core": "^5.2.7",
+    "@angular/common": "^5.2.7",
+    "@angular/platform-browser": "^5.2.7",
+    "@angular/forms": "^5.2.7"
+  },
   "peerDependencies": {
     "rxjs": "^5.5.6",
     "@angular/core": "^5.2.7",
