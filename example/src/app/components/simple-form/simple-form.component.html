@@ -1,0 +1,17 @@
+<h2>Simple form from a stream</h2>
+<div class="users-list">
+  <span>Users:</span> 
+  <ul>
+    <li (click)="selectUser('Tom')">Tom</li>
+    <li (click)="selectUser('Chen')">Chen</li>
+    <li (click)="selectUser('Shai')">Shai</li>
+    <li (click)="selectUser('Ziv')">Ziv</li>
+    <li (click)="selectUser('Ben')">Ben</li>
+  </ul>
+</div>
+<div [formGroup]="userFormGroup">
+  <div>Name: <input formControlName="name"></div>
+  <div>Age: <input formControlName="age" type="number"></div>
+  <div>Left handed: <input formControlName="leftHanded" type="check"></div>
+</div>
+

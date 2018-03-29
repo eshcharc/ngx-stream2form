@@ -33,23 +33,28 @@ function unsubscribeAll() {
 }
 
 function setOnDestroy(component) {
-    if (!component.onDestroySet && component.ngOnDestroy) {
-        component.onDestroySet = true;
-        const ngOnDestroy = component.ngOnDestroy || (() => {});
-        const ngOnDestroyDescriptor = Object.getOwnPropertyDescriptor(component, 'ngOnDestroy');
-        Object.defineProperty(component, 'ngOnDestroy', {
-            get: function() {
-                component.onDestroySet = false;
-                unsubscribeAll();
-                Object.defineProperty(component, 'ngOnDestroy', {
-                    get: function() {
-                        return ngOnDestroy;
-                    }
-                });
-                return ngOnDestroy;
-            }
-        });
+    if (component.ngOnDestroy) {
+        if (!component.onDestroySet) {
+            component.onDestroySet = true;
+            const ngOnDestroy = component.ngOnDestroy;
+            const ngOnDestroyDescriptor = Object.getOwnPropertyDescriptor(component, 'ngOnDestroy');
+            Object.defineProperty(component, 'ngOnDestroy', {
+                get: function() {
+                    component.onDestroySet = false;
+                    unsubscribeAll();
+                    Object.defineProperty(component, 'ngOnDestroy', {
+                        get: function() {
+                            return ngOnDestroy;
+                        }
+                    });
+                    return ngOnDestroy;
+                }
+            });
+        }
+    } else {
+        throw new Error(`Missing ngOnDestroy on ${component.constructor.name}, which may result with memory leaks.`)
     }
+    
 }
 
 export function stream2Form(config: {
