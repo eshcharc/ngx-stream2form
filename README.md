@@ -1,4 +1,4 @@
-# ngx-model2form
+# ngx-stream2form
 
 Set a property of an object with an Angular form based on the structore of the event's payload of an RxJS stream
 
@@ -146,6 +146,9 @@ stream2Form.call(this, {
 * Exclude model properties: Omit transforming properties that are mentioned in the exclude entity into form entities. Keep transforming other properties into form entities.
 * Set the depth level the form will be generated to.
 * Replace form control only if value changes, otherwise, leave the former.
+
+## Article
+[Angular reactive form generation out of streams](https://medium.com/@eshcharc/angular-reactive-form-generation-out-of-streams-b7bd460cb42e)
 
 ## Running the tests
 
