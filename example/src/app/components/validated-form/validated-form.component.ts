@@ -1,15 +1,15 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { stream2Form } from 'ngx-stream2form';
 import { of } from 'rxjs/observable/of';
-import { FormGroup, FormArray } from '@angular/forms';
+import { FormGroup, FormArray, Validators } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Component({
-  templateUrl: './simple-form.component.html',
-  styleUrls: ['./simple-form.component.scss']
+  templateUrl: './validated-form.component.html',
+  styleUrls: ['./validated-form.component.scss']
 })
-export class SimpleFormComponent implements OnInit, OnDestroy {
+export class ValidatedFormComponent implements OnInit, OnDestroy {
   userFormGroup: FormGroup;
   users = [
     {
@@ -59,7 +59,14 @@ export class SimpleFormComponent implements OnInit, OnDestroy {
     this.users$ = new BehaviorSubject(this.users[0]);
     stream2Form.call(this, {
       propertyName: 'userFormGroup',
-      streamSelector: this.users$
+      streamSelector: this.users$,
+      validators: {
+        name: Validators.required,
+        children: {
+          name: Validators.required,
+          age: [Validators.min(4), Validators.max(10)]
+        }
+      }
     });
   }
 

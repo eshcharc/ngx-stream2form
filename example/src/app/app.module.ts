@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app.routing.module';
 import { AppComponent } from './app.component';
 import { SimpleStreamComponent } from './components/simple-stream/simple-stream.component';
 import { SimpleFormComponent } from './components/simple-form/simple-form.component';
+import { ValidatedFormComponent } from './components/validated-form/validated-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
@@ -12,7 +13,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     SimpleStreamComponent,
-    SimpleFormComponent
+    SimpleFormComponent,
+    ValidatedFormComponent
   ],
   imports: [
     BrowserModule,
