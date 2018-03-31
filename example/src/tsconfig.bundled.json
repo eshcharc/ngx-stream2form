@@ -6,7 +6,8 @@
     "module": "es2015",
     "types": [],
     "paths": {
-      "ngx-stream2form": ["../../dist"]
+      "ngx-stream2form": ["../../dist"],
+      "@angular/*": ["../node_modules/@angular/*"]
     }
   },
   "include": [
