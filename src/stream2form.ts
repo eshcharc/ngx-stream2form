@@ -3,16 +3,6 @@ import { entityToFormEntity, Entity } from './model2form';
 
 let subscriptions = {};
 
-function unsubscribeStream() {
-    if (subscriptions) {
-        Object.keys(subscriptions).forEach(key => {
-            if (subscriptions[key]) {
-                subscriptions[key].unsubscribe();
-            }
-        });
-    }
-}
-
 function unsubscribeKey(keySubscriptions) {
     if (keySubscriptions) {
         keySubscriptions.forEach(subscription => {
