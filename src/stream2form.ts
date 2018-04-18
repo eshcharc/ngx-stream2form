@@ -42,7 +42,7 @@ function setOnDestroy(component) {
             });
         }
     } else {
-        throw new Error(`Missing ngOnDestroy on ${component.constructor.name}, which may result with memory leaks.`)
+        throw new Error(`Missing ${component.constructor.name} ngOnDestroy declaration.`)
     }
     
 }
@@ -60,10 +60,13 @@ export function stream2Form(config: {
     subscriptions[propertyName] = [];
     const subscription = config.streamSelector.subscribe(value => {
         if (config.generateForm) {
+            const oldProperty = this[propertyName];
             this[propertyName]  = entityToFormEntity(value, this[propertyName], config.validators);
             if (config.formChanged) {
-                const formChangedSubs = config.formChanged.call(this, this[propertyName]);
-                subscriptions[propertyName].push(formChangedSubs);
+                const formChangedSubs = config.formChanged.call(this, this[propertyName], oldProperty);
+                if (Array.isArray(formChangedSubs) && formChangedSubs.length) {
+                    subscriptions[propertyName].push(formChangedSubs);
+                }
             }
         } else {
             this[propertyName] = value;

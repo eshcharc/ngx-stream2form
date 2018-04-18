@@ -7,6 +7,7 @@ import { SimpleStreamComponent } from './components/simple-stream/simple-stream.
 import { SimpleFormComponent } from './components/simple-form/simple-form.component';
 import { ValidatedFormComponent } from './components/validated-form/validated-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RemotelyChangingFormComponent } from './components/remotely-changing-form/remotely-changing-form.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     SimpleStreamComponent,
     SimpleFormComponent,
-    ValidatedFormComponent
+    ValidatedFormComponent,
+    RemotelyChangingFormComponent
   ],
   imports: [
     BrowserModule,

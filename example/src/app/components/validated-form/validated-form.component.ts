@@ -13,6 +13,7 @@ export class ValidatedFormComponent implements OnInit, OnDestroy {
   userFormGroup: FormGroup;
   users = [
     {
+      id: 0,
       name: 'Parent 1',
       age: 55,
       leftHanded: true,
@@ -35,11 +36,13 @@ export class ValidatedFormComponent implements OnInit, OnDestroy {
       ]
     },
     {
+      id: 1,
       name: 'Parent 2',
       age: 37,
       leftHanded: false
     },
     {
+      id: 2,
       name: 'Parent 3',
       age: 32,
       leftHanded: false,
@@ -78,8 +81,8 @@ export class ValidatedFormComponent implements OnInit, OnDestroy {
     return [];
   }
 
-  selectUser(userName: string) {
-    const user = this.users.find(u => u.name === userName);
+  selectUser(id: number) {
+    const user = this.users.find(u => u.id === id);
     this.users$.next(user);
   }
 

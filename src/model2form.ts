@@ -5,10 +5,9 @@ export type Primitive = string | number | boolean;
 export type Entity = Primitive | Object | Object[] | Primitive[];
 
 function primitiveToFormControl(value: Primitive, oldFormControl: FormControl, validators: ValidatorFn[] | ValidatorFn) {
-    // TODO: find a way to keep the old control while not unsubscribing it on change in unsubscribeAll.
-    // if (oldFormControl && (value === oldFormControl.value)) {
-    //     return oldFormControl;
-    // }
+    if (oldFormControl && ((value === oldFormControl.value) || oldFormControl.dirty)) {
+        return oldFormControl;
+    }
     return new FormControl(value, validators);
 }
 

@@ -2,7 +2,7 @@
 <div class="users-list">
   <span>Users:</span> 
   <ul>
-    <li (click)="selectUser(user.name)" *ngFor="let user of users">{{user.name}}</li>
+    <li (click)="selectUser(user.id)" *ngFor="let user of users">{{user.name}}</li>
   </ul>
 </div>
 <div [formGroup]="userFormGroup">

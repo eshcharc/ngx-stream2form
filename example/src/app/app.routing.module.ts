@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { SimpleStreamComponent } from './components/simple-stream/simple-stream.component';
 import { SimpleFormComponent } from './components/simple-form/simple-form.component';
 import { ValidatedFormComponent } from './components/validated-form/validated-form.component';
+import { RemotelyChangingFormComponent } from './components/remotely-changing-form/remotely-changing-form.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'validated-form',
     component: ValidatedFormComponent
+  },
+  {
+    path: 'remotely-changing-form',
+    component: RemotelyChangingFormComponent
   }
 ];
 
