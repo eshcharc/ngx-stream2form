@@ -145,7 +145,6 @@ stream2Form.call(this, {
 * Include model properties: Only transform properties that are mentioned in the include entity into form entities. Keep other properties as object properties.
 * Exclude model properties: Omit transforming properties that are mentioned in the exclude entity into form entities. Keep transforming other properties into form entities.
 * Set the depth level the form will be generated to.
-* Replace form control only if value changes, otherwise, leave the former.
 
 ## Article
 [Angular reactive form generation out of streams](https://medium.com/@eshcharc/angular-reactive-form-generation-out-of-streams-b7bd460cb42e)

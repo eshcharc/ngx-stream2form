@@ -12,7 +12,8 @@
   "scripts": {
     "test": "npm test",
     "lint": "tslint",
-    "build": "ng-packagr -p package.json"
+    "build": "ng-packagr -p package.json",
+    "publish": "npm run build && npm publish"
   },
   "ngPackage": {
     "lib": {
