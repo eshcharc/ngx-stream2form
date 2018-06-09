@@ -5,9 +5,9 @@ export type Primitive = string | number | boolean;
 export type Entity = Primitive | Object | Object[] | Primitive[];
 
 function primitiveToFormControl(value: Primitive, oldFormControl: FormControl, validators: ValidatorFn[] | ValidatorFn) {
-    if (oldFormControl && ((value === oldFormControl.value) || oldFormControl.dirty)) {
-        return oldFormControl;
-    }
+    // if (oldFormControl && ((value === oldFormControl.value) || oldFormControl.dirty)) {
+    //     return oldFormControl;
+    // }
     return new FormControl(value, validators);
 }
 

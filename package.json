@@ -1,6 +1,6 @@
 {
   "name": "ngx-stream2form",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "license": "MIT",
   "description": "Set a property of an object with an Angular form based on the structore of the event's payload of an RxJS stream",
   "repository": {
